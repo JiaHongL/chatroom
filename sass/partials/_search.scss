@@ -1,0 +1,55 @@
+
+#search{
+	#header{
+
+	}
+	#youtube{
+		 margin: 80px 25px 40px 25px;
+    	iframe { margin:0%; margin-top:-20px;margin-bottom:-30px; padding:0; width: 100%; height:400px; -webkit-box-sizing: border-box;}
+		@media screen and (min-width: 1200px) {
+    	// 如果使用者之視窗寬度 >= 1200px，將會再載入這裡的 CSS。
+    		margin: 90px 40px 50px 40px;
+    		iframe { margin-left:1%;margin-right:1%;margin-top:-5px;margin-bottom:-20px; padding:0; width:98%; height:500px; -webkit-box-sizing: border-box;}
+ 
+		}
+		@media screen and (min-width: 768px) and (max-width: 979px) {
+		    // 如果使用者之視窗寬度介於 768px ~ 979px，將會再載入這裡的 CSS。
+		    margin: 20px 20px 20px 20px;
+		    padding-left:25px!important;
+		    padding-right:25px!important;
+		    iframe {padding:0; width: 100%; height:400px; -webkit-box-sizing: border-box;}
+     
+		}
+		@media screen and (max-width: 767px) {
+		    // 如果使用者之視窗寬度 <= 768px，將會再載入這裡的 CSS。
+		    margin: -5px -4px 10px -4px;
+		    iframe {width: 100%; height:250px; -webkit-box-sizing: border-box;}
+		    	padding-left:15px!important;
+		    	padding-right:15px!important;
+        
+		}
+
+		// @media screen and (max-device-width: 480px) {
+		//     // 如果使用者之裝置寬度 <= 480px，將會再載入這裡的 CSS。
+		//      margin: 30px 10px 30px 10px;
+		//      iframe { margin:0; padding:0; width: 100%; height:200px; -webkit-box-sizing: border-box;}
+    
+		// }
+	}
+	#main{
+		.row{
+			// background-color: red;
+			width:100%;
+			.div___show{
+				text-align : center;
+					.title{
+						color: red;
+					}
+			}		
+	  }			
+	}
+	#footer{
+
+	}
+}
+

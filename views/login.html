@@ -1,0 +1,23 @@
+<div id="login">
+  <div id="loginform" class="container">
+    <form class="form-signin" role="form" ng-submit="login()">
+      <h2 class="form-signin-heading">Please login in</h2>
+      <input type="text" class="form-control" placeholder="username" required="" autofocus="" ng-model="login_username">
+      <input type="password" class="form-control" placeholder="Password" required="" ng-model="login_pass">
+      <div class="span4 warn" ng-show="warn">
+         <div class="alert warnin">
+            <a class="close" ng-click="warn=false">×</a>
+            <strong>Sorry!</strong>Your account or password error 
+         </div>
+      </div>
+      <button  class="btn1 btn btn-lg btn-primary btn-block" type="submit">login</button>
+    </form>
+    <a href="#/sign">
+      <button class="btn2 btn btn-lg btn-primary btn-block">sign</button>
+    </a>
+  </div>
+  <video autoplay loop  id="bgvid" >
+    <source src="viedo/movie_1.m4v" type="video/mp4">
+    <source src="viedo/movie_1.ogv" type="video/ogg">
+  </video>
+</div>  

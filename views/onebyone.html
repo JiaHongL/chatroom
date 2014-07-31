@@ -1,0 +1,33 @@
+<div id ="onebyone">
+	<div class="rightmenu panel panel-success">
+  		<div class="panel-heading">
+	    	<i class="fa fa-user"> friends</i>
+	    </div>
+	    <div class="btn-group-vertical" >
+	    	<button type="button" class="btn btn-default" ng-repeat="list in userlist" ng-click="gochat(list.id,list.name)" ng-hide="username==list.name">{{list.name}}</button>
+		</div>
+	</div>
+	<div class="panel panel-info">
+	    <div class="panel-heading">
+	    	<i class="fa fa-weixin"> {{username}}</i>
+	    </div>
+	    <div class="panel-body">
+	    	{{otheruser||' no body '}}
+	        <i class="fa fa-paper-plane-o"></i>
+	       	<div class="message__div"> 
+	            <div  class="message" action="" method="post">
+		            <textarea name="message"  class="form-control" id="message" disabled="disabled" readonly="readonly">
+		            </textarea>
+		         </div>
+		    </div>     
+		    <div class="div__push">     
+		        <form class="push" role="form" ng-submit="addchat()">
+		              <input id="inputmessage" type="text" placeholder="write...." class="form-control" ng-model="chattext">
+		              <button type="button" class="btn btn-info" ng-click="addchat()">Submit</button>
+		        </form>
+		     </div>
+	    </div>
+  	</div>
+</div>
+
+

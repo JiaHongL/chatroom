@@ -1,0 +1,41 @@
+#login{
+		#loginform{
+				margin-top:30%;
+					.btn1 {
+						margin-top: 20px;
+					}
+					.btn2 {
+						margin-top: 20px;
+						background-color: #C991FF;
+					}
+					.form-control{
+						margin-top: 10px;
+					}
+					.warn{
+						.warnin{
+							margin-top: 4%;
+							background-color:#FFAC55;	
+						}
+				} 
+			}
+		@media screen and (min-width: 1200px) {
+			#loginform{
+				margin-top:20%;
+			}
+		}
+		@media screen and (min-width: 768px) and (max-width: 979px) {
+		     #loginform{
+				margin-top:30%;
+			}
+		}
+		@media screen and (max-width: 767px) {
+        		margin-top:50%;
+		}
+	video#bgvid {
+	  position: fixed; right: 0; bottom: 0;
+	  min-width: 100%; min-height: 100%;
+	  width: auto; height: auto; z-index: -100;
+	  background: url(polina.jpg) no-repeat;
+	  background-size: cover; 
+	}
+}
