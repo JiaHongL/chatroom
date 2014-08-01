@@ -1,6 +1,13 @@
 #chat{
+	#title{
+		margin-top:1%;
+			a{
+				font-size:10px;
+				margin-left: 90%	
+			}
+	}
 	.panel{
-		margin-top:5%; 
+		margin-top:1%; 
 	}
 	.message__div{
 		margin-top:1%;
@@ -53,8 +60,8 @@
 	 			}
 	 			.btn{
 					display:inline;
-					width: 25%;
-					max-width:25%;
+					width: 12.5%;
+					max-width:12.5%;
 				}	
 	 	}
 
@@ -62,7 +69,7 @@
 	.div__out{
 		// display:inline-block;
 			.btn{
-			 	width: 30%;
+			 	width: 0%;
 				max-width:30%;
 		  }	
 	} 
@@ -75,47 +82,24 @@
 	// }
 }
 
-.clock {
-	width:100%; 
-	margin:0 auto; 
-	padding:10px;
-	margin-top:10px; 
-	// border:1px solid #333; 
-	color:#fff; 
-}
-#Date { 
-	font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif; 
-	font-size:36px; 
-	text-align:center; 
-	text-shadow:0 0 5px #00c6ff; 
-}
-ul { 
-	width:100%; 
-	margin:0 auto; 
-	padding:0px; 
-	list-style:none; 
-	text-align:center; 
-}
-ul li { 
-	display:inline; 
-	font-size:1em; 
-	text-align:center; 
-	font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif; 
-	text-shadow:0 0 5px #00c6ff;
-	width:20%; 
-}
-.sz{ 
-	width:20%; 
-	display:block; 
-	float:left; 
-	height:50px; 
-	overflow: hidden;
-}
-.dt{ 
-	width:20%; 
-	margin-top:-6px;
-}
 
+.panel-primary{
+		margin-left:2%;
+		margin-right:2%;
+	}
+
+@media screen and (min-width: 1200px) {
+	.panel-primary{
+		margin-left:2%;
+		margin-right:2%;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+	.panel-primary{
+		margin-left:5%;
+		margin-right:5%;
+	}
+}
 
 
 

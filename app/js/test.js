@@ -78,17 +78,6 @@ myApp.controller('testCtrl', ['$scope', function ($scope) {
         }
      }); 
 
-    // var wallPost = new Parse.Object("WallPost");
-    // var postACL = new Parse.ACL();
-    // // postACL.setReadAccess('rootadmin',true);
-    // // postACL.setWriteAccess('rootadmin',true);
-    // postACL.setRoleReadAccess('read_note_role', true);
-    // postACL.setRoleWriteAccess('read_note_role', true);
-    // wallPost.setACL(postACL);
-    // wallPost.save();   
-
-
-    // console.log(Parse.Object());
 
     var query = new Parse.Query(Parse.Role);
     query.contains("name",'read_note_role');

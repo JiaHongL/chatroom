@@ -15,6 +15,7 @@ myApp.controller('loginCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 		  success: function(user) {
 		    // Do stuff after successful login.
 		    // location.replace("#/search");
+		    location.replace("#/chat");
 		    $scope.add(Parse.User.current());
 
 		  },
@@ -97,30 +98,6 @@ myApp.controller('loginCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 	 //    }
 	 //    return true;
 		// };
-
-		// var user = new Parse.User();
-		// user.set("username", "root");
-		// user.set("password", "root");
-		// user.set("email", "root@example.com");
-		 
-		// // other fields can be set just like with Parse.Object
-		// user.set("phone", "415-392-0202");
-		 
-		// user.signUp(null, {
-		//   success: function(user) {
-		//     // Hooray! Let them use the app now.
-		//   },
-		//   error: function(user, error) {
-		//     // Show the error message somewhere and let the user try again.
-		//     alert("Error: " + error.code + " " + error.message);
-		//   }
-		// });
-		// var Note = Parse.Object.extend("Note");
-		// var privateNote = new Note();
-		// privateNote.set("content", "This note is private!");
-		// privateNote.setACL(new Parse.ACL(Parse.User.current()));
-		// privateNote.save();
-
 
 
 }]);
