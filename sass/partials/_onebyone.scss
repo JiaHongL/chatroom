@@ -1,0 +1,80 @@
+#onebyone{
+	margin-top:5%;
+	.panel{
+		overflow:auto;
+		display: inline-block;
+		margin-top:0;
+		width: 70%;
+		max-width:70%;
+			.message__div{
+				// margin-top:1%;
+				margin-bottom:1%; 
+				.message {
+			     border: none;
+			     outline: none;
+			     	#message {
+			     		 display: inline;
+					     background: #ffffff;
+					   	 padding-left:0.5em;
+					     margin: auto;
+					     font-size: 1em;
+					     height: 35em;
+					     max-height: 35em;
+					     width: 100%;
+					     max-width:100%;
+			 		}
+		 		}
+
+			}
+			.div__push{
+			    // display:inline-block;	
+				.push{
+				 	width: 100%;
+					max-width:100%;
+			 			#inputmessage{
+			 				display:inline;
+			 				width: 70%;
+							max-width:70%;
+							margin-left:2% 
+			 			}
+			 			.btn{
+							display:inline;
+							width: 25%;
+							max-width:25%;
+						}	
+			 	}
+
+			} 
+			.div__out{
+				// display:inline-block;
+					.btn{
+					 	width: 30%;
+						max-width:30%;
+				  }	
+			}  
+	}
+	.rightmenu{
+		overflow:auto;
+		display: inline-block;
+		width: 28%;
+		max-width:28%;
+		vertical-align:none;
+			.btn-group-vertical{
+				 // background: #AFFFB0;
+			     font-size: 1em;
+			     height: 578px;
+			     max-height: 578px;
+			     width: 100%;
+			     max-width:100%;
+			     vertical-align:none;
+			     	button{
+			     		margin-top:2%;
+			     		color:#7f7fff;
+			     		background:#ddccff;
+			     	}
+			}
+
+	}
+
+
+}

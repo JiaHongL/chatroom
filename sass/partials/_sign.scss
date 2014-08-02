@@ -1,0 +1,102 @@
+#sign{
+			#signform{
+					margin-top:8%;
+					input{
+						margin-top:2%; 
+					}
+					.btn{
+						margin-top:6%; 
+					}
+					.form-signin-heading{
+						text-align:center;
+						color:blue;
+						margin-bottom:14%;
+						font-size: 40px;
+					}
+					.btn2{
+						margin-top:2%;
+						background-color:#73FF75;
+						border-color:#73FF75;
+					}
+			}
+		@media screen and (min-width: 1200px) {
+			#signform{
+					margin-top:2%;
+					input{
+						margin-top:2%; 
+					}
+					.btn{
+						margin-top:6%; 
+					}
+					.form-signin-heading{
+						text-align:center;
+						color:blue;
+						margin-bottom:14%;
+						font-size: 50px;
+					}
+					.btn2{
+						margin-top:2%;
+						background-color:#73FF75;
+						border-color:#73FF75;
+					}
+			}
+		}
+		@media screen and (min-width: 768px) and (max-width: 979px) {
+		     #signform{
+					margin-top:8%;
+					input{
+						margin-top:2%; 
+					}
+					.btn{
+						margin-top:6%; 
+					}
+					.form-signin-heading{
+						text-align:center;
+						color:blue;
+						margin-bottom:14%;
+						font-size: 40px;
+					}
+					.btn2{
+						margin-top:2%;
+						background-color:#73FF75;
+						border-color:#73FF75;
+					}
+			}
+		}
+		@media screen and (max-width: 767px) {
+        		#signform{
+					margin-top:20%;
+					input{
+						margin-top:4%; 
+					}
+					.btn{
+						margin-top:7%; 
+					}
+					.form-signin-heading{
+						text-align:center;
+						color:blue;
+						margin-bottom:30%;
+						font-size:25px;
+					}
+			}
+		}
+	video#bgvid {
+	  position: fixed; right: 0; bottom: 0;
+	  min-width: 100%; min-height: 100%;
+	  width: auto; height: auto; z-index: -100;
+	  background: url(polina.jpg) no-repeat;
+	  background-size: cover; 
+	}
+	.warn{
+		.warnin{
+			margin-top: 4%;
+			background-color:#FFAC55;	
+		}
+		
+	}
+	.btn2{
+		margin-top:5%;
+		background-color:#73FF75;
+		border-color:#73FF75;
+	}
+}

@@ -1,0 +1,62 @@
+<div>
+	<p>user : {{username}}</p>
+<div>
+<div id="test">
+	<div class="table-responsive">
+	    <table class="table table-striped">
+	      <thead>
+	        <tr>
+	          <th>id</th>
+	          <th>user</th>
+	          <th>email<th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr ng-repeat="name in names">
+	          <td>{{name.id}}</td>
+	          <td>{{name._serverData.username}}</td>
+	          <td>{{name._serverData.email}}</td>
+	        </tr>
+	      </tbody>
+	    </table>
+	</div>
+	<div class="table-responsive">
+	    <table class="table table-striped">
+	      <thead>
+	        <tr>
+	          <th>id</th>
+	          <th>role</th>
+	          <th>ACL</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr ng-repeat="name in names2">
+	          <td>{{name.id}}</td>
+	          <td>{{name._serverData.name}}</td>
+	          <td>{{name._serverData.ACL.permissionsById}}</td>
+	        </tr>
+	      </tbody>
+	    </table>
+	</div>
+	<div class="table-responsive">
+	    <table class="table table-striped">
+	      <thead>
+	        <tr>
+	          <th>id</th>
+	          <th>ACL</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr ng-repeat="name in names3">
+	          <td>{{name.id}}</td>
+	          <td>{{name._serverData.ACL.permissionsById}}</td>
+	        </tr>
+	      </tbody>
+	    </table>
+	</div>
+</div>
+<div>
+	<a ng-click="logOut()" class="btn btn-lg btn-success"  role="button">logOut</a>
+	<a ng-click="getnote()" class="btn btn-lg btn-success"  role="button">Get privace note </a>
+	<p>{{note}}</p>
+</div>	

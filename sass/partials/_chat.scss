@@ -1,0 +1,125 @@
+#chat{
+	#title{
+		margin-top:1%;
+			a{
+				font-size:10px;
+				margin-left: 90%	
+			}
+	}
+	.panel{
+		margin-top:1%; 
+	}
+	.message__div{
+		margin-top:1%;
+		margin-bottom:1%; 
+		.message {
+	     border: none;
+	     outline: none;
+	     display: inline;
+	     	#message {
+	     		 display: inline;
+			     background: #AFFFB0;
+			   	 padding-left:0.5em;
+			     margin: auto;
+			     font-size: 1em;
+			     height: 35em;
+			     max-height: 35em;
+			     width: 70%;
+			     max-width:70%;
+			     margin-left:2% 
+	 		}
+ 		}
+ 		.message2 {
+		     border: none;
+		     outline: none;
+		     display: inline;
+		     	#message2 {
+		     	 display: inline;
+			     background:#FFC991;
+			   	 padding-left:0.5em;
+			     margin: auto;
+			     font-size: 1em;
+			     height: 35em;
+			     max-height: 35em;
+			     width: 25%;
+			     max-width:25%;
+	 		}
+ 		}
+
+	}
+	.div__push{
+	    // display:inline-block;	
+		.push{
+		 	width: 100%;
+			max-width:100%;
+	 			#inputmessage{
+	 				display:inline;
+	 				width: 70%;
+					max-width:70%;
+					margin-left:2% 
+	 			}
+	 			.btn{
+					display:inline;
+					width: 12.5%;
+					max-width:12.5%;
+				}	
+	 	}
+
+	} 
+	.div__out{
+		// display:inline-block;
+			.btn{
+			 	width: 0%;
+				max-width:30%;
+		  }	
+	} 
+	// #chat {
+	//   position: fixed; right: 0; bottom: 0;
+	//   min-width: 100%; min-height: 100%;
+	//   width: auto; height: auto; z-index: -100;
+	//   background: url(polina.jpg) no-repeat;
+	//   background-size: cover; 
+	// }
+}
+
+
+.panel-primary{
+		margin-left:2%;
+		margin-right:2%;
+	}
+
+@media screen and (min-width: 1200px) {
+	.panel-primary{
+		margin-left:2%;
+		margin-right:2%;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+	.panel-primary{
+		margin-left:5%;
+		margin-right:5%;
+	}
+}
+
+
+
+textarea {
+	-moz-box-shadow:1px 1px 0 #E7E7E7;
+	-moz-box-sizing:border-box;
+	border-color:#CCCCCC #999999 #999999 #CCCCCC;
+	border-style:solid;
+	border-width:1px;
+	font-family:arial,sans-serif;
+	font-size:13px;
+	height:160px;
+	margin:10px auto;
+	outline-color:-moz-use-text-color;
+	outline-style:none;
+	outline-width:medium;
+	padding:2px;
+	width:100%;
+}
+
+
+
+

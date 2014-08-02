@@ -1,0 +1,25 @@
+<div id="chat">
+  <div class="panel panel-primary">
+    <div class="panel-heading"><i class="fa fa-github-alt"></i> {{username}}</div>
+    <div class="panel-body">
+        <div class="message__div"> 
+          <div  class="message" action="" method="post">
+            <textarea name="message"  class="form-control" id="message" disabled="disabled" readonly="readonly">
+            </textarea>
+          </div>
+          <div  class="message2" action="" method="post">
+            <textarea name="message"  class="form-control" id="message2" disabled="disabled" readonly="readonly">
+            </textarea>
+          </div>
+      </div>
+      <div class="div__push">     
+        <form class="push" role="form" ng-submit="addchat()">
+              <input id="inputmessage" type="text" placeholder="write...." class="form-control" ng-model="chattext">
+              <button type="button" class="btn btn-primary" ng-click="addchat()">Submit</button>
+              <button type="button" class="btn btn-success" ng-click="logOut()">logOut</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> 
+

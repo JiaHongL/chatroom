@@ -1,0 +1,25 @@
+<div id="sign">
+  <div id="signform" class="container"  ng-submit="sign()">
+    <form class="form-signin" role="form">
+      <h2 class="form-signin-heading">Sign up to the Web</h2>
+      <input type="text" class="form-control" placeholder="username" required="" ng-model="sign_username">
+      <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" ng-model="sign_email">
+      <input type="password" class="form-control" placeholder="Password" required="" ng-model="sign_pass">
+      <div class="span4 warn" ng-show="warn">
+         <div class="alert warnin">
+            <a class="close" ng-click="warn=false">×</a>
+            <strong>Sorry!</strong> This email has been registered
+         </div>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+    <a href="#/login" >
+       <button class="btn2 btn-lg btn-primary btn-block">Return login</button>
+    </a>
+  </div>
+<!--   <video autoplay loop  id="bgvid" >
+    <source src="viedo/movie_1.m4v" type="video/mp4">
+    <source src="viedo/movie_1.ogv" type="video/ogg">
+  </video> -->
+
+</div> 
