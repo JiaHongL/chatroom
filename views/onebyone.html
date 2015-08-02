@@ -16,7 +16,7 @@
 	        <i class="fa fa-paper-plane-o"></i>
 	       	<div class="message__div"> 
 	            <div  class="message" action="" method="post">
-		            <textarea name="message"  class="form-control" id="message" disabled="disabled" readonly="readonly">
+		            <textarea name="message"  class="form-control" id="message" disabled="disabled" readonly="readonly" ng-model="mes">
 		            </textarea>
 		         </div>
 		    </div>     
@@ -28,6 +28,11 @@
 		     </div>
 	    </div>
   	</div>
+  	<div style="text-align:right;margin-bottom:5%;">
+          <button ng-click="goto()" type="button"  class="btn  btn-success"  role="button">Go to everyone</button>
+          <button ng-click="logOut()" style="width: 25%;
+              max-width:25%;margin-right:6px;" type="button" class="btn  btn-success"  role="button">logOut</button>
+    </div>  
 </div>
 
 

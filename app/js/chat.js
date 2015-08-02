@@ -18,8 +18,8 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 			document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight;
 		});
 	}
-
-    
+    $scope.chat();
+        
     $scope.upuserlist=function(data){
         var results = data;
         $("#message2").text('');
@@ -45,15 +45,34 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
        
 	}
 
-	$scope.logOut = function(){ 
+	$scope.logOut = function(){
+        socket.disconnect();  
         Parse.User.logOut();
-        socket.disconnect();
         location.replace("#/login");
     }
 
 
+    $scope.goto = function(){
+        // isonline = false;
+        // socket.disconnect();  
+        location.replace("#/onebyone");
+    }
+
+    $scope.if_online = function(){ 
+        if (isonline==false) {
+          isonline = true;  
+          socket.emit('people-onlin',$scope.username);
+        }else{
+            socket.emit('people-onlin2',$scope.username);  
+        };
+    }
+
+
+
     var socket = io.connect('http://localhost:3000');
-    socket.emit('people-onlin',$scope.username);
+    
+    
+    $scope.if_online();
     socket.on('hi',function(data){
         $scope.chat();
         console.log(data);
@@ -69,6 +88,38 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
     socket.on('upuser',function(data){
         $scope.upuserlist(data);
     }); 
+
+     socket.on('mymessage',function(data,id,name){
+        // console.log('to_name:' + checkname);
+        if(name == checkname)
+        {
+          // $("#message").text($("#message").text() + "\n" + name +":"+ data);
+          console.log('one11');
+        }
+        else if(name !== checkname)
+        {
+          toastr.remove();  
+          console.log('one2');
+          toastr.options = {
+            "closeButton": false,
+            "debug": true,
+            "positionClass": "toast-top-full-width",
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "2000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          }
+          toastr.options.preventDuplicates = true;
+          toastr.info(name + " has a new message for you");
+        } 
+    });
+
+
 
 
 }]);

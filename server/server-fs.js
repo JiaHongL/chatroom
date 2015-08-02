@@ -44,13 +44,15 @@ var http = require('http').createServer(function (request, response) {
 		},
 		'/abc':function(request,response){
 			 var type = 'text/plain';
-			 var output = 'test2';
+			 var output = 'test123';
 			 // http://127.0.0.1:3000/abc?format=json
 			 if(typeof qs.format !== 'undefined' && qs.format === 'json'){
 				type = 'application/json';
 				output = JSON.stringify({id:'01',name:'adnim',content:'testchat'});		 	
-			 }else if(typeof qs.format !== 'undefined' && qs.format === 'html') {
-			 	var html = fs.readFileSync('test.html');
+			 }
+			 // http://127.0.0.1:3000/abc?format=html
+			 else if(typeof qs.format !== 'undefined' && qs.format === 'html') {
+			 	var html = fs.readFileSync('./return.html');
 			 	type = 'text/html';
 			 	output = html;
 			 }
@@ -60,7 +62,7 @@ var http = require('http').createServer(function (request, response) {
 			response.end();
 		},
 		'/showchat':function(request,response){
-			ChatModel2.find({}, function(err, results) {
+			ChatModel.find({}, function(err, results) {
 				response.writeHead(200,{'Content-Type':'application/json',
 	    		"Access-Control-Allow-Origin":"*"});
 	    		output = JSON.stringify(results);
@@ -70,8 +72,11 @@ var http = require('http').createServer(function (request, response) {
 		},
 		'/showonebyonechat':function(request,response){
 			// qs.name qs.name2
-			if(typeof qs.name !== 'undefined' && qs.name !== '' &&  qs.name2 !== 'undefined' && qs.name2 !== ''){
-				ChatModel2.find({ $and: [ {'name':{$in:[qs.name,qs.name2]}}, {'name2':{$in:[qs.name,qs.name2]}} ] }).sort({'time':1}).exec(function(err,results){
+			if(typeof qs.name !== 'undefined' && qs.name !== '' 
+				&&  qs.name2 !== 'undefined' && qs.name2 !== ''){
+				ChatModel2.find(
+					{ $and: [ {'name':{$in:[qs.name,qs.name2]}},{'name2':{$in:[qs.name,qs.name2]}} ] })
+					.sort({'time':1}).exec(function(err,results){
 					response.writeHead(200,{'Content-Type':'application/json',
 		    		"Access-Control-Allow-Origin":"*"});
 		    		output = JSON.stringify(results);
@@ -79,22 +84,23 @@ var http = require('http').createServer(function (request, response) {
 					response.end();
 				});
 			}
-			else{
+			else 
+			{
 				response.writeHead(200,{'Content-Type':'application/json',
 	    		"Access-Control-Allow-Origin":"*"});
-	    		output = JSON.stringify({message:'error'});
+	    		output = JSON.stringify({message:'something error'});
 				response.write(output);
 				response.end(); 
 			}		
 		},
 		'/add':function(request,response){
-			 // http://127.0.0.1:3000/add?name=root&content=testest!
-			 
+			 // http://127.0.0.1:3000/add?name=root&content=testest!		 
 			 var myobj = new Object();
 			 myobj.name = qs.name;
 			 myobj.content = qs.content;
 
-			 if(typeof qs.name !== 'undefined' && qs.name !== '' &&  qs.content !== 'undefined' && qs.content !== ''){
+			 if(typeof qs.name !== 'undefined' && qs.name !== '' 
+			 	&&  qs.content !== 'undefined' && qs.content !== ''){
 				var addcat = new ChatModel(myobj);
 				addcat.save(function (err) {
 				  if (err) return handleError(err);
@@ -115,10 +121,6 @@ var http = require('http').createServer(function (request, response) {
 		},
 		'/addonebyone':function(request,response){
 			 // http://127.0.0.1:3000/addonebyone?name=root&name2=ddd&content=testest
-			 // name: String,
-			 // name2: String,
-			 // content: String,
-			 // time:Date
 			 var dt=new Date(); 
 			 var myobj = new Object();
 			 myobj.name = qs.name;
@@ -166,20 +168,30 @@ var http = require('http').createServer(function (request, response) {
 }).listen(app.set('port'))
 
 
+
 var temp = [];
 var temp2 = [];
 var io = require('socket.io').listen(http);
-io.sockets.on('connection', function(socket){
+var socket = io;  
+	socket.on('connection', function(socket){
 	console.log(socket.id);
   	console.log('有使用者連進來');
   	socket.emit('hi','伺服器連線成功');
+
   	socket.on('people-onlin',function(data){
   		var arry = data;
   		var Object1 = {"name":data,"id":socket.id};
   		temp2.push(Object1);
   		console.log(temp2);
+  		console.log(data);
   		socket.name = data;
   		temp.push(arry);
+  		socket.emit('upuser2',temp2);
+  		socket.broadcast.emit('upuser2',temp2);
+  		socket.emit('upuser',temp);
+  		socket.broadcast.emit('upuser',temp);
+    });
+    socket.on('people-onlin2',function(){
   		socket.emit('upuser2',temp2);
   		socket.broadcast.emit('upuser2',temp2);
   		socket.emit('upuser',temp);
@@ -215,12 +227,13 @@ io.sockets.on('connection', function(socket){
         	socket.broadcast.emit('update',data);     
     });
     socket.on('for_someone',function(for_id,data,from_id,from_name){
-    	console.log("for_id:" + for_id);
-    	console.log("from_id:" + from_id);
-    	console.log("text:" + data);
+    	// console.log("for_id:" + for_id);
+    	// console.log("from_id:" + from_id);
+    	// console.log("text:" + data);
+    	// console.log('sv_for_someone..........................');
         io.sockets.socket(for_id).emit('mymessage',data,from_id,from_name); 
     });
-})
+	});
 
 
 // function clock() {

@@ -1,0 +1,45 @@
+<div id="search">
+	<div id="header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li ng-click="loginout()"><a>login out</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="youtube" class="jumbotron ">
+       <iframe src="//www.youtube.com/embed/ouFsyf7dplQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="main">
+      <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4 div___show" ng-repeat="list in lists">
+  	        <div class="img_fa" >
+	              <a href="#/videos/{{list.id.videoId||'null'}}/{{next||'null'}}/{{prev||'null'}}" >
+	                  <img class="imgclick img" height="128" width="228"src="{{list.snippet.thumbnails.default.url}}" >
+	                  <i ng-show="look" class="fa fa-play-circle-o fa-2x"  ></i>
+	              </a>
+            </div>
+                <h4 class="title" >
+                	{{list.snippet.title|limitTo:20}}...
+                </h4>     
+          </div>
+      </div>
+    </div>
+</div>
+

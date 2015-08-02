@@ -1,9 +1,12 @@
 myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 	Parse.initialize("NmpohwL2F6HY2ekvFOhvgI4yla69szhDJ27jnZKS", "UnB0zyLH34p6zQkBzECUCxhka99WG2eOJpTsLrzC");
  	$scope.username = Parse.User.current().attributes.username;
-  $scope.userid = "";  
+  $scope.userid = ""; 
+  $scope.chattex = ""; 
     var socket = io.connect('http://localhost:3000');
-    socket.emit('people-onlin',$scope.username);
+
+    // socket.emit('people-onlin',$scope.username);
+    // socket.disconnect();
     socket.on('upuser2',function(data){
        for(var i=0;i<data.length;i++){
          if(data[i].name == $scope.username ){
@@ -15,20 +18,33 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
        $scope.$apply();
     });
 
+    $scope.if_online = function(){ 
+        if (isonline==false) {
+          isonline = true;  
+          socket.emit('people-onlin',$scope.username);
+        }else{
+            socket.emit('people-onlin2',$scope.username);  
+        };
+    }
+        $scope.if_online();
+
     $scope.gochat = function(id,name){
       $scope.to_name = name; 
       $scope.to_id = id;
       $scope.otheruser = name;
+      checkname = name;
       musicapi.showonebyonechat($scope.username,$scope.to_name).then(function(res){
-        $("#message").text('');
+        $scope.mes='';
         var results = res.data;
         for(var i in results) {
            inmessage = results[i].name + " : " + results[i].content;
                  if (i==0){
-                      $("#message").text(inmessage);
+                      $scope.mes = results[i].name + " : " + results[i].content +'\n';
+                      console.log($scope.mes);
                  }
                  else{
-                      $("#message").text($("#message").text()+"\n"+inmessage);
+                      $scope.mes = $scope.mes + results[i].name + " : " + results[i].content +'\n';
+                      // $scope.mes= $("#message").text($("#message").text()+"\n"+inmessage);
                  }
            
         }
@@ -37,11 +53,13 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
     }
 
      $scope.addchat = function(){
+      
          if ($scope.chattext!== '' && $scope.chattext!==undefined && $scope.otheruser!== '' && $scope.otheruser!==undefined){
             musicapi.addonebyonechat($scope.username,$scope.otheruser,$scope.chattext).then(function(res){
                 console.log("create success");      
             });
-            $("#message").text($("#message").text() + "\n" + $scope.username +":"+ $scope.chattext);
+            // $("#message").text($("#message").text() + "\n" + $scope.username +":"+ $scope.chattext);
+            $scope.mes = $scope.mes + $scope.username + " : " + $scope.chattext +'\n'
             console.log($scope.to_name); 
             console.log($scope.to_id);
             msg = "text";
@@ -54,12 +72,43 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
 
     }
 
+   $scope.logOut = function(){ 
+        socket.disconnect();
+        Parse.User.logOut();
+        location.replace("#/login");
+    }
+    
+    $scope.goto = function(){
+        // isonline = false;
+        // socket.disconnect();
+        checkname = ''; 
+        location.replace("#/chat");
+    }
+    
+    $(window).resize(function() {
+        console.log(1);
+    });
+
+    console.log(socket);
     socket.on('mymessage',function(data,id,name){
-        if(id == $scope.to_id)
+      // console.log('name:' + name);
+      // console.log('to_name:' + checkname);
+
+      // console.log('nothing_ooooooooooooooooo');
+        if(name == checkname)
         {
-          $("#message").text($("#message").text() + "\n" + name +":"+ data);
+          // $scope.mes = $("#message").text() + "\n" + name +":"+ data ;
+          $scope.mes = $scope.mes + name + " : " + data +'\n'
+          $scope.$apply();
+          // $("#message").text($("#message").text() + "\n" + name +":"+ data);
+          console.log(data);
+          // console.log($("#message").text());
+          // console.log('nothing..................');
         }
-        else{
+        else if(name !== checkname)
+        {
+          console.log('123123');
+          toastr.remove();
           toastr.options = {
             "closeButton": false,
             "debug": false,
@@ -74,9 +123,14 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
           }
+          toastr.options.preventDuplicates = true;
           toastr.info(name + " has a new message for you");
         } 
     });
+
+
+
+    
 
 
 

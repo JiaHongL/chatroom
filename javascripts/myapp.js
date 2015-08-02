@@ -6,10 +6,10 @@ myApp.config(['$routeProvider','$anchorScrollProvider',
   function($routeProvider, $anchorScrollProvider) {
     $anchorScrollProvider.disableAutoScrolling();
     $routeProvider.
-     when('/search', {
-        templateUrl: 'views/search.html',
-        controller: 'searchCtrl'
-      }).
+     // when('/search', {
+     //    templateUrl: 'views/search.html',
+     //    controller: 'searchCtrl'
+     //  }).
      when('/sign', {
         templateUrl: 'views/sign.html',
         controller: 'signCtrl'

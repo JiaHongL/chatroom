@@ -3,6 +3,10 @@ $key = 'AIzaSyCfmi2Rsd5cjHV_-cW0avDqn5Nzq1k7EDA';  // V3 需要key才能使用ap
 $youtube_api = 'https://www.googleapis.com/youtube/v3'; //youtube api
 $channelId ='UCCsUQXwhDj4iVlhG4VCq6Kg';  //測試
 
+var isonline = false;
+var checkname = '';
+var stoprepeat = false;
+
 myApp.factory('musicParameter',  [
 	'$http', function($http) {
 		return {
@@ -28,7 +32,7 @@ myApp.factory('musicapi',  [
 				});
 			},
 			showchat: function(){
-				// console.log('http://127.0.0.1:3000/showchat');
+				console.log('http://127.0.0.1:3000/showchat');
 				return $http({ 		
 					url:('http://127.0.0.1:3000/showchat'),
 					method: 'get',
@@ -48,7 +52,7 @@ myApp.factory('musicapi',  [
 			},
 			addchat: function(name,content){
 				// http://127.0.0.1:3000/add?name=root&content=testest!
-				// console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
+				console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
 				return $http({ 		
 					url:('http://127.0.0.1:3000/add?name='+ name +'&content=' + content),
 					method: 'get',
@@ -58,7 +62,7 @@ myApp.factory('musicapi',  [
 			},
 			addonebyonechat: function(name,name2,content){
 				// http://127.0.0.1:3000/addonebyone?name=root&name2=ddd&content=testest
-				// console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
+				console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
 				return $http({ 		
 					url:('http://127.0.0.1:3000/addonebyone?name=' + name + '&name2=' + name2 + '&content=' + content),
 					method: 'get',
