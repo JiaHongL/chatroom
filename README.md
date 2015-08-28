@@ -6,6 +6,8 @@ use
 3.parse
 4.mongolab
 
-
+about socket.io
 http://jiahongl.github.io/jhlblogger/#/read_article/nWc3nkardR
+
+about node.js
 http://jiahongl.github.io/jhlblogger/#/read_article/Gy6hPczFXq
