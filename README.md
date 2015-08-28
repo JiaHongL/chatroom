@@ -6,8 +6,8 @@ This is a chatroom prototype.
 3.parse
 4.mongolab
 
-<p>about socket.io</p>
+<p>I.about socket.io</p>
 http://jiahongl.github.io/jhlblogger/#/read_article/nWc3nkardR
 
-<p>about node.js</p>
+<p>II.about node.js</p>
 http://jiahongl.github.io/jhlblogger/#/read_article/Gy6hPczFXq
