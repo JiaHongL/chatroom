@@ -37,7 +37,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         if ($scope.chattext!== '' && $scope.chattext!==undefined){
              // inmessage = $scope.username + " : " + $scope.chattext;
             // $("#message").text($("#message").text()+"\n"+inmessage);
-            $scope.mes= $scope.mes + "\n" + $scope.username + " : " + $scope.chattext  ;
+            $scope.mes= $scope.mes  + $scope.username + " : " + $scope.chattext  ;
             document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight;   
             var newcat = $scope.chattext;
             var temp = {"name":$scope.username,"content":$scope.chattext};
