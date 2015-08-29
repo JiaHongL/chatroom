@@ -86,6 +86,7 @@ myApp.factory('musicfunction',  [
 	}		
 ]);
 
+// <script src="http://localhost:3000/socket.io/socket.io.js"></script>
 
 
 
