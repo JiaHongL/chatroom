@@ -177,8 +177,8 @@ var temp2 = [];
 var io = require('socket.io').listen(http);
 var socket = io;  
 	socket.configure(function () { 
-	  io.set("transports", ["xhr-polling"]); 
-	  io.set("polling duration", 20); 
+	  socket.set("transports", ["xhr-polling"]); 
+	  socket.set("polling duration", 20); 
 	});
 	socket.on('connection', function(socket){
 	console.log(socket.id);
