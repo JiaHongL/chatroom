@@ -3,7 +3,7 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
  	$scope.username = Parse.User.current().attributes.username;
   $scope.userid = ""; 
   $scope.chattex = ""; 
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect('https://chatroom12.herokuapp.com');
 
     // socket.emit('people-onlin',$scope.username);
     // socket.disconnect();

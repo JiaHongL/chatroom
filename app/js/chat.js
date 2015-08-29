@@ -69,7 +69,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 
 
 
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect('https://chatroom12.herokuapp.com');
     
     
     $scope.if_online();
