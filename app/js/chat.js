@@ -4,15 +4,17 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
  	$scope.username = Parse.User.current().attributes.username;
  	$scope.chat=function(){ 
  		musicapi.showchat().then(function(res){
-			$("#message").text('');
+			// $("#message").text('');
+      $scope.mes='';
 			var results = res.data;
 			for(var i in results) {
 			   inmessage = results[i].name + " : " + results[i].content;
                if (i==0){
-                    $("#message").text(inmessage);
+                    // $("#message").text(inmessage);
+                    $scope.mes = results[i].name + " : " + results[i].content +'\n';
                }
                else{
-                    $("#message").text($("#message").text()+"\n"+inmessage);
+                    $scope.mes = $scope.mes + results[i].name + " : " + results[i].content +'\n';
                }
 			   
 			}
@@ -33,8 +35,9 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 
 	$scope.addchat=function(){
         if ($scope.chattext!== '' && $scope.chattext!==undefined){
-             inmessage = $scope.username + " : " + $scope.chattext;
-            $("#message").text($("#message").text()+"\n"+inmessage);
+             // inmessage = $scope.username + " : " + $scope.chattext;
+            // $("#message").text($("#message").text()+"\n"+inmessage);
+            $scope.mes= $scope.mes + $scope.username + " : " + $scope.chattext  +'\n';
             document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight;   
             var newcat = $scope.chattext;
             var temp = {"name":$scope.username,"content":$scope.chattext};
@@ -44,7 +47,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
                 console.log("create success");      
             });
         }
-       
+
 	}
 
 	$scope.logOut = function(){
@@ -85,8 +88,9 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 
     socket.on('update',function(data){
         var results = data;
-        inmessage = results.name + " : " + results.content;
-        $("#message").text($("#message").text()+"\n"+inmessage);
+        // inmessage = results.name + " : " + results.content;
+        // $("#message").text($("#message").text()+"\n"+inmessage);
+        $scope.mes = $scope.mes + results.name + " : " + results.content;
         document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight;
     });
 
