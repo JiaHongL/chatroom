@@ -91,7 +91,10 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         // inmessage = results.name + " : " + results.content;
         // $("#message").text($("#message").text()+"\n"+inmessage);
         $scope.mes = $scope.mes + results.name + " : " + results.content;
+        console.log('update');
+        console.log($scope.mes);
         document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight;
+        $scope.$apply();
     });
 
     socket.on('upuser',function(data){
