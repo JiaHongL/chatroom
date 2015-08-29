@@ -175,6 +175,7 @@ var http = require('http').createServer(function (request, response) {
 var temp = [];
 var temp2 = [];
 var io = require('socket.io').listen(http);
+io.set('transports', ['xhr-polling', 'jsonp-polling']);
 var socket = io;  
 	socket.on('connection', function(socket){
 	console.log(socket.id);

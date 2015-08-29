@@ -32,7 +32,7 @@ myApp.factory('musicapi',  [
 				});
 			},
 			showchat: function(){
-				console.log('http://127.0.0.1:3000/showchat');
+				console.log('https://chatroom12.herokuapp.com/showchat');
 				return $http({ 		
 					url:('https://chatroom12.herokuapp.com/showchat'),
 					method: 'get',
