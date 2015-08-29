@@ -60,8 +60,8 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
             });
             // $("#message").text($("#message").text() + "\n" + $scope.username +":"+ $scope.chattext);
             $scope.mes = $scope.mes + $scope.username + " : " + $scope.chattext +'\n'
-            console.log($scope.to_name); 
-            console.log($scope.to_id);
+            // console.log($scope.to_name); 
+            // console.log($scope.to_id);
             msg = "text";
             socket.emit('for_someone',$scope.to_id,$scope.chattext,$scope.userid,$scope.username);
             $scope.chattext = "";
@@ -75,6 +75,7 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
    $scope.logOut = function(){ 
         socket.disconnect();
         Parse.User.logOut();
+        window.location.reload();
         location.replace("#/login");
     }
     
@@ -85,9 +86,9 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
         location.replace("#/chat");
     }
     
-    $(window).resize(function() {
-        console.log(1);
-    });
+    // $(window).resize(function() {
+    //     // console.log(1);
+    // });
 
     console.log(socket);
     socket.on('mymessage',function(data,id,name){
@@ -101,7 +102,7 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
           $scope.mes = $scope.mes + name + " : " + data +'\n'
           $scope.$apply();
           // $("#message").text($("#message").text() + "\n" + name +":"+ data);
-          console.log(data);
+          // console.log(data);
           // console.log($("#message").text());
           // console.log('nothing..................');
         }

@@ -9,8 +9,9 @@ myApp.controller('loginCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 		    location.replace("#/chat");
 		    console.log("login");
 		} else {
-		    // show the signup or login page
+		    // show the signup or login page		    
 		}
+
 
 	 $scope.login=function(){ 
 	 	Parse.User.logIn($scope.login_username, $scope.login_pass, {
