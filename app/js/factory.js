@@ -34,7 +34,7 @@ myApp.factory('musicapi',  [
 			showchat: function(){
 				console.log('http://127.0.0.1:3000/showchat');
 				return $http({ 		
-					url:('http://127.0.0.1:3000/showchat'),
+					url:('https://chatroom12.herokuapp.com/showchat'),
 					method: 'get',
 				}).then(function(res) {			       
 		            return res;
@@ -44,7 +44,7 @@ myApp.factory('musicapi',  [
 				// console.log('http://127.0.0.1:3000/showchat');
 				console.log('http://127.0.0.1:3000/showonebyonechat?name='+ name +"&name2=" +name2);
 				return $http({ 		
-					url:('http://127.0.0.1:3000/showonebyonechat?name='+ name +"&name2=" +name2),
+					url:('https://chatroom12.herokuapp.com/showonebyonechat?name='+ name +"&name2=" +name2),
 					method: 'get',
 				}).then(function(res) {			       
 		            return res;
@@ -54,7 +54,7 @@ myApp.factory('musicapi',  [
 				// http://127.0.0.1:3000/add?name=root&content=testest!
 				console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
 				return $http({ 		
-					url:('http://127.0.0.1:3000/add?name='+ name +'&content=' + content),
+					url:('https://chatroom12.herokuapp.com/add?name='+ name +'&content=' + content),
 					method: 'get',
 				}).then(function(res) {			       
 		            return res;
@@ -64,7 +64,7 @@ myApp.factory('musicapi',  [
 				// http://127.0.0.1:3000/addonebyone?name=root&name2=ddd&content=testest
 				console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
 				return $http({ 		
-					url:('http://127.0.0.1:3000/addonebyone?name=' + name + '&name2=' + name2 + '&content=' + content),
+					url:('https://chatroom12.herokuapp.com/addonebyone?name=' + name + '&name2=' + name2 + '&content=' + content),
 					method: 'get',
 				}).then(function(res) {			       
 		            return res;
