@@ -22,6 +22,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         
     $scope.upuserlist=function(data){
         var results = data;
+        console.log(results);
         $("#message2").text('');
         for(var i in results) {
                $("#message2").text($("#message2").text()+"\n"+results[i]);
