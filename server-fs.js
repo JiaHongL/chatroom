@@ -3,8 +3,9 @@ var querystring = require('querystring');
 var fs = require('fs');
 var express = require('express');
 var app = express();
-app.set('port',3000);
-
+// app.set('port',3000);
+app.set('port',process.env.PORT ||3000);
+// app.set('port’, process.env.PORT || 80);
 
 
 var mongoose = require('mongoose');
@@ -166,6 +167,8 @@ var http = require('http').createServer(function (request, response) {
 // }).listen(3000)
 
 }).listen(app.set('port'))
+
+
 
 
 
