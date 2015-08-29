@@ -13,6 +13,7 @@ myApp.controller('loginCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 		}
 
 
+
 	 $scope.login=function(){ 
 	 	Parse.User.logIn($scope.login_username, $scope.login_pass, {
 		  success: function(user) {
@@ -45,16 +46,6 @@ myApp.controller('loginCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 	      }
 	   });
  	}  
-
- 	
-
-
-
-
-
-
-
-
 
 
 	 // $scope.test2 = function(){
