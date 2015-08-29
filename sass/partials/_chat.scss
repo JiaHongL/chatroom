@@ -1,6 +1,10 @@
 #chat{
 	.panel{
-		margin-top:5%; 
+		margin-top:4%; 
+		@media screen and (min-width: 700px) {
+			margin-left:15%;
+			margin-right:15%;
+		}
 	}
 	.message__div{
 		margin-top:1%;
@@ -61,9 +65,12 @@
 	} 
 	.div__out{
 		// display:inline-block;
-			.btn{
-			 	width: 30%;
-				max-width:30%;
+			.btn_logout{
+			 	// margin-right:12%;
+			 	@media screen and (min-width: 700px) {
+					margin-right:13%;
+				}
+			 	
 		  }	
 	} 
 	// #chat {

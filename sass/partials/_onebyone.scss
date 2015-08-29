@@ -1,11 +1,16 @@
 #onebyone{
-	margin-top:5%;
+	margin-top:4%;
+	@media screen and (min-width: 700px) {
+		margin-left:15%;
+		margin-right:15%;
+	}
 	.panel{
 		overflow:auto;
 		display: inline-block;
 		margin-top:0;
-		width: 70%;
-		max-width:70%;
+		width: 72%;
+		max-width:75%;
+		// margin-right:9%;
 			.message__div{
 				// margin-top:1%;
 				margin-bottom:1%; 
@@ -33,14 +38,14 @@
 					max-width:100%;
 			 			#inputmessage{
 			 				display:inline;
-			 				width: 70%;
-							max-width:70%;
+			 				width: 60%;
+							max-width:60%;
 							margin-left:2% 
 			 			}
 			 			.btn{
 							display:inline;
-							width: 25%;
-							max-width:25%;
+							width: 35%;
+							max-width:35%;
 						}	
 			 	}
 
@@ -56,13 +61,17 @@
 	.rightmenu{
 		overflow:auto;
 		display: inline-block;
-		width: 28%;
+		width: 25%;
 		max-width:28%;
 		vertical-align:none;
+		// margin-left:10%;
 			.btn-group-vertical{
 				 // background: #AFFFB0;
 			     font-size: 1em;
-			     height: 520px;
+			     @media screen and (min-width: 700px) {
+			     	height: 525px;
+				 }
+			     height: 510px;
 			     max-height: 578px;
 			     width: 100%;
 			     max-width:100%;
