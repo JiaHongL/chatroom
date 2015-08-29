@@ -90,7 +90,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         var results = data;
         // inmessage = results.name + " : " + results.content;
         // $("#message").text($("#message").text()+"\n"+inmessage);
-        $scope.mes = $scope.mes + results.name + " : " + results.content;
+        $scope.mes = $scope.mes + "\n" + results.name + " : " + results.content;
         console.log('update');
         console.log($scope.mes);
         document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight;
