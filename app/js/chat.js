@@ -22,7 +22,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         
     $scope.upuserlist=function(data){
         var results = data;
-        console.log(results);
+        // console.log(results);
         $("#message2").text('');
         for(var i in results) {
                $("#message2").text($("#message2").text()+"\n"+results[i]);
@@ -50,6 +50,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         socket.disconnect();  
         Parse.User.logOut();
         location.replace("#/login");
+         $scope.$apply();
     }
 
 
@@ -77,7 +78,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
     socket.on('hi',function(data){
         $scope.chat();
         $scope.$apply();
-        console.log(data);
+        // console.log(data);
     });
 
     socket.on('update',function(data){
@@ -96,7 +97,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         if(name == checkname)
         {
           // $("#message").text($("#message").text() + "\n" + name +":"+ data);
-          console.log('one11');
+          // console.log('one11');
         }
         else if(name !== checkname)
         {
