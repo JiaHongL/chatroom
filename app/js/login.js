@@ -1,6 +1,8 @@
 myApp.controller('loginCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 	Parse.initialize("NmpohwL2F6HY2ekvFOhvgI4yla69szhDJ27jnZKS", "UnB0zyLH34p6zQkBzECUCxhka99WG2eOJpTsLrzC");
 	 var checkdatareturn2 = true;
+	 $scope.login_username = 'jhl';
+	 $scope.login_pass = 'jhl';
 
 	 var currentUser = Parse.User.current();
 		if (currentUser) {

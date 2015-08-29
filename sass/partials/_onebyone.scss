@@ -7,6 +7,7 @@
 	.panel{
 		overflow:auto;
 		display: inline-block;
+		vertical-align: top;
 		margin-top:0;
 		width: 72%;
 		max-width:75%;
@@ -61,6 +62,7 @@
 	.rightmenu{
 		overflow:auto;
 		display: inline-block;
+		vertical-align: top;
 		width: 25%;
 		max-width:28%;
 		vertical-align:none;
