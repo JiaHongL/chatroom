@@ -1,5 +1,6 @@
 myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
-	Parse.initialize("NmpohwL2F6HY2ekvFOhvgI4yla69szhDJ27jnZKS", "UnB0zyLH34p6zQkBzECUCxhka99WG2eOJpTsLrzC");
+  
+  Parse.initialize("NmpohwL2F6HY2ekvFOhvgI4yla69szhDJ27jnZKS", "UnB0zyLH34p6zQkBzECUCxhka99WG2eOJpTsLrzC");
  	$scope.username = Parse.User.current().attributes.username;
  	$scope.chat=function(){ 
  		musicapi.showchat().then(function(res){
@@ -50,6 +51,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         socket.disconnect();  
         Parse.User.logOut();
         location.replace("#/login");
+        window.location.reload();
          $scope.$apply();
     }
 
