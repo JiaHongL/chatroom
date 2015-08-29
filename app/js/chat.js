@@ -76,6 +76,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
     $scope.if_online();
     socket.on('hi',function(data){
         $scope.chat();
+        $scope.$apply();
         console.log(data);
     });
 
