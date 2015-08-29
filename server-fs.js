@@ -175,8 +175,11 @@ var http = require('http').createServer(function (request, response) {
 var temp = [];
 var temp2 = [];
 var io = require('socket.io').listen(http);
-io.set('transports', ['xhr-polling', 'jsonp-polling']);
 var socket = io;  
+	socket.configure(function () { 
+	  io.set("transports", ["xhr-polling"]); 
+	  io.set("polling duration", 20); 
+	});
 	socket.on('connection', function(socket){
 	console.log(socket.id);
   	console.log('有使用者連進來');
