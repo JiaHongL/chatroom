@@ -29,6 +29,19 @@
 					     width: 100%;
 					     max-width:100%;
 			 		}
+			 		@media screen and (max-width: 480px) {
+			 			#message {
+			     		 display: inline;
+					     background: #ffffff;
+					   	 padding-left:0.5em;
+					     margin: auto;
+					     font-size: 1em;
+					     height: 25em;
+					     max-height: 30em;
+					     width: 100%;
+					     max-width:100%;
+			 			}
+			 		}
 		 		}
 
 			}
@@ -72,6 +85,10 @@
 			     font-size: 1em;
 			     @media screen and (min-width: 700px) {
 			     	height: 525px;
+				 }
+				 @media screen and (max-width: 480px) {
+				 	height: 30.5em;
+					max-height: 30.5em;
 				 }
 			     height: 510px;
 			     max-height: 578px;

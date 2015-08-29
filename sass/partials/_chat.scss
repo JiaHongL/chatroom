@@ -23,8 +23,24 @@
 			     max-height: 35em;
 			     width: 70%;
 			     max-width:70%;
-			     margin-left:2% 
+			     margin-left:2%
+
 	 		}
+	 		@media screen and (max-width: 480px) {
+			     	#message {
+	     		 display: inline;
+			     background: #AFFFB0;
+			   	 padding-left:0.5em;
+			     margin: auto;
+			     font-size: 1em;
+			     height: 25em;
+			     max-height: 30em;
+			     width: 70%;
+			     max-width:70%;
+			     margin-left:2%
+	 			}
+			}
+
  		}
  		.message2 {
 		     border: none;
@@ -40,6 +56,19 @@
 			     max-height: 35em;
 			     width: 25%;
 			     max-width:25%;
+	 		}
+	 		@media screen and (max-width: 480px) {
+	 				#message2 {
+		     	 display: inline;
+			     background:#FFC991;
+			   	 padding-left:0.5em;
+			     margin: auto;
+			     font-size: 1em;
+			     height: 25em;
+			     max-height: 30em;
+			     width: 25%;
+			     max-width:25%;
+	 			}
 	 		}
  		}
 
