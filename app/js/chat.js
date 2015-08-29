@@ -50,8 +50,8 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
 	$scope.logOut = function(){
         socket.disconnect();  
         Parse.User.logOut();
-        window.location.reload();
         location.replace("#/login");
+        window.location.reload();
          $scope.$apply();
     }
 
