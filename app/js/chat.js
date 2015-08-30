@@ -55,7 +55,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         Parse.User.logOut();
         socket.emit('disconnect_check');
         location.replace("#/login");
-         window.location.reload();
+         // window.location.reload();
          $scope.$apply();
     }
 
@@ -93,7 +93,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
         // $("#message").text($("#message").text()+"\n"+inmessage);
         $scope.mes = $scope.mes  + results.name + " : " + results.content  + "\n";
         console.log('update');
-        console.log($scope.mes);
+        // console.log($scope.mes);
         document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight;
         $scope.$apply();
     });

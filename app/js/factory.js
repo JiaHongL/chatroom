@@ -23,7 +23,7 @@ myApp.factory('musicapi',  [
 	'$http', function($http) {
 		return {
 			searchdata: function(now_total,part){
-				console.log($youtube_api+"/search?channelId="+$channelId+"&key="+$key+"&maxResults="+now_total+"&part="+part+"&type=video");
+				// console.log($youtube_api+"/search?channelId="+$channelId+"&key="+$key+"&maxResults="+now_total+"&part="+part+"&type=video");
 				return $http({ 		
 					url:($youtube_api+"/search?channelId="+$channelId+"&key="+$key+"&maxResults="+now_total+"&part="+part+"&type=video"),
 					method: 'get',
@@ -32,7 +32,7 @@ myApp.factory('musicapi',  [
 				});
 			},
 			showchat: function(){
-				console.log('https://chatroom12.herokuapp.com/showchat');
+				// console.log('https://chatroom12.herokuapp.com/showchat');
 				return $http({ 		
 					url:('https://chatroom12.herokuapp.com/showchat'),
 					method: 'get',
@@ -42,7 +42,7 @@ myApp.factory('musicapi',  [
 			},
 			showonebyonechat: function(name,name2){
 				// console.log('http://127.0.0.1:3000/showchat');
-				console.log('http://127.0.0.1:3000/showonebyonechat?name='+ name +"&name2=" +name2);
+				// console.log('http://127.0.0.1:3000/showonebyonechat?name='+ name +"&name2=" +name2);
 				return $http({ 		
 					url:('https://chatroom12.herokuapp.com/showonebyonechat?name='+ name +"&name2=" +name2),
 					method: 'get',
@@ -52,7 +52,7 @@ myApp.factory('musicapi',  [
 			},
 			addchat: function(name,content){
 				// http://127.0.0.1:3000/add?name=root&content=testest!
-				console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
+				// console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
 				return $http({ 		
 					url:('https://chatroom12.herokuapp.com/add?name='+ name +'&content=' + content),
 					method: 'get',
@@ -62,7 +62,7 @@ myApp.factory('musicapi',  [
 			},
 			addonebyonechat: function(name,name2,content){
 				// http://127.0.0.1:3000/addonebyone?name=root&name2=ddd&content=testest
-				console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
+				// console.log('http://127.0.0.1:3000/add?name='+ name +'&content=' + content);
 				return $http({ 		
 					url:('https://chatroom12.herokuapp.com/addonebyone?name=' + name + '&name2=' + name2 + '&content=' + content),
 					method: 'get',

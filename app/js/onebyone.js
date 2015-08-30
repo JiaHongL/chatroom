@@ -13,7 +13,7 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
               $scope.userid = data[i].id;
           }
         } 
-       console.log(data);
+       // console.log(data);
        $scope.userlist = data;
        $scope.$apply();
     });
@@ -77,7 +77,7 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
         Parse.User.logOut();
         socket.emit('disconnect_check');
         location.replace("#/login");
-        window.location.reload();
+        // window.location.reload();
         $scope.$apply();
     }
     
@@ -92,7 +92,7 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
     //     // console.log(1);
     // });
 
-    console.log(socket);
+    // console.log(socket);
     socket.on('mymessage',function(data,id,name){
       // console.log('name:' + name);
       // console.log('to_name:' + checkname);
