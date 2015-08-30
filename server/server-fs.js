@@ -196,6 +196,28 @@ var socket = io;
   		socket.broadcast.emit('upuser2',temp2);
   		socket.emit('upuser',temp);
   		socket.broadcast.emit('upuser',temp);
+    });
+    socket.on('disconnect_check',function(){
+  		console.log('使用者:'+socket.name+'已離線');
+    	for(var i=0;i<temp.length;i++){
+            if(temp[i]==socket.name){
+            	temp.splice(i,1);
+            	console.log(temp);
+            	socket.emit('upuser',temp);
+            	socket.broadcast.emit('upuser',temp);
+            }
+        }
+        for(var i=0;i<temp2.length;i++){
+        	// console.log("socketna1" + socket.name);
+        	// console.log("socketna" + temp2[0].name)
+            if(temp2[i].name == socket.name){
+            	console.log("dddd");
+            	temp2.splice(i,1);
+            	console.log(temp2);
+            	// socket.emit('upuser2',temp2);
+            	socket.broadcast.emit('upuser2',temp2);
+            }
+        }
     });	
     socket.on('disconnect', function(){
     	console.log('使用者:'+socket.name+'已離線');
