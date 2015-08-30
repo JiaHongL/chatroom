@@ -16,6 +16,7 @@
 	     	#message {
 	     		 display: inline;
 			     background: #AFFFB0;
+			     background-image:url('http://www.khjh.kh.edu.tw/mewawa/dw4/bg6/%E5%BD%B1%E5%83%8F/sea01d_gif.gif');
 			   	 padding-left:0.5em;
 			     margin: auto;
 			     font-size: 1em;
@@ -23,13 +24,13 @@
 			     max-height: 35em;
 			     width: 70%;
 			     max-width:70%;
-			     margin-left:2%
-
+			     margin-left:2%;
 	 		}
 	 		@media screen and (max-width: 480px) {
 			     	#message {
 	     		 display: inline;
 			     background: #AFFFB0;
+			     background-image:url('http://www.khjh.kh.edu.tw/mewawa/dw4/bg6/%E5%BD%B1%E5%83%8F/sea01d_gif.gif');
 			   	 padding-left:0.5em;
 			     margin: auto;
 			     font-size: 1em;
@@ -49,6 +50,7 @@
 		     	#message2 {
 		     	 display: inline;
 			     background:#FFC991;
+			     background-image:url('http://www.khjh.kh.edu.tw/mewawa/dw4/bg6/%E5%BD%B1%E5%83%8F/sea01c_gif.gif');
 			   	 padding-left:0.5em;
 			     margin: auto;
 			     font-size: 1em;
@@ -56,11 +58,13 @@
 			     max-height: 35em;
 			     width: 25%;
 			     max-width:25%;
+			     text-align:center;
 	 		}
 	 		@media screen and (max-width: 480px) {
 	 				#message2 {
 		     	 display: inline;
 			     background:#FFC991;
+			     background-image:url('http://www.khjh.kh.edu.tw/mewawa/dw4/bg6/%E5%BD%B1%E5%83%8F/sea01c_gif.gif');
 			   	 padding-left:0.5em;
 			     margin: auto;
 			     font-size: 1em;
@@ -68,6 +72,7 @@
 			     max-height: 30em;
 			     width: 25%;
 			     max-width:25%;
+			     text-align:left;
 	 			}
 	 		}
  		}

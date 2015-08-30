@@ -761,6 +761,7 @@ body {
 #chat .message__div .message #message {
   display: inline;
   background: #AFFFB0;
+  background-image: url("http://www.khjh.kh.edu.tw/mewawa/dw4/bg6/%E5%BD%B1%E5%83%8F/sea01d_gif.gif");
   padding-left: 0.5em;
   margin: auto;
   font-size: 1em;
@@ -775,6 +776,7 @@ body {
   #chat .message__div .message #message {
     display: inline;
     background: #AFFFB0;
+    background-image: url("http://www.khjh.kh.edu.tw/mewawa/dw4/bg6/%E5%BD%B1%E5%83%8F/sea01d_gif.gif");
     padding-left: 0.5em;
     margin: auto;
     font-size: 1em;
@@ -785,16 +787,17 @@ body {
     margin-left: 2%;
   }
 }
-/* line 45, ../sass/partials/_chat.scss */
+/* line 46, ../sass/partials/_chat.scss */
 #chat .message__div .message2 {
   border: none;
   outline: none;
   display: inline;
 }
-/* line 49, ../sass/partials/_chat.scss */
+/* line 50, ../sass/partials/_chat.scss */
 #chat .message__div .message2 #message2 {
   display: inline;
   background: #FFC991;
+  background-image: url("http://www.khjh.kh.edu.tw/mewawa/dw4/bg6/%E5%BD%B1%E5%83%8F/sea01c_gif.gif");
   padding-left: 0.5em;
   margin: auto;
   font-size: 1em;
@@ -802,12 +805,14 @@ body {
   max-height: 35em;
   width: 25%;
   max-width: 25%;
+  text-align: center;
 }
 @media screen and (max-width: 480px) {
-  /* line 61, ../sass/partials/_chat.scss */
+  /* line 64, ../sass/partials/_chat.scss */
   #chat .message__div .message2 #message2 {
     display: inline;
     background: #FFC991;
+    background-image: url("http://www.khjh.kh.edu.tw/mewawa/dw4/bg6/%E5%BD%B1%E5%83%8F/sea01c_gif.gif");
     padding-left: 0.5em;
     margin: auto;
     font-size: 1em;
@@ -815,34 +820,35 @@ body {
     max-height: 30em;
     width: 25%;
     max-width: 25%;
+    text-align: left;
   }
 }
-/* line 78, ../sass/partials/_chat.scss */
+/* line 83, ../sass/partials/_chat.scss */
 #chat .div__push .push {
   width: 100%;
   max-width: 100%;
 }
-/* line 81, ../sass/partials/_chat.scss */
+/* line 86, ../sass/partials/_chat.scss */
 #chat .div__push .push #inputmessage {
   display: inline;
   width: 70%;
   max-width: 70%;
   margin-left: 2%;
 }
-/* line 87, ../sass/partials/_chat.scss */
+/* line 92, ../sass/partials/_chat.scss */
 #chat .div__push .push .btn {
   display: inline;
   width: 25%;
   max-width: 25%;
 }
 @media screen and (min-width: 700px) {
-  /* line 97, ../sass/partials/_chat.scss */
+  /* line 102, ../sass/partials/_chat.scss */
   #chat .div__out .btn_logout {
     margin-right: 13%;
   }
 }
 
-/* line 114, ../sass/partials/_chat.scss */
+/* line 119, ../sass/partials/_chat.scss */
 .clock {
   width: 100%;
   margin: 0 auto;
@@ -851,7 +857,7 @@ body {
   color: #fff;
 }
 
-/* line 122, ../sass/partials/_chat.scss */
+/* line 127, ../sass/partials/_chat.scss */
 #Date {
   font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
   font-size: 36px;
@@ -859,7 +865,7 @@ body {
   text-shadow: 0 0 5px #00c6ff;
 }
 
-/* line 128, ../sass/partials/_chat.scss */
+/* line 133, ../sass/partials/_chat.scss */
 ul {
   width: 100%;
   margin: 0 auto;
@@ -868,7 +874,7 @@ ul {
   text-align: center;
 }
 
-/* line 135, ../sass/partials/_chat.scss */
+/* line 140, ../sass/partials/_chat.scss */
 ul li {
   display: inline;
   font-size: 1em;
@@ -878,7 +884,7 @@ ul li {
   width: 20%;
 }
 
-/* line 143, ../sass/partials/_chat.scss */
+/* line 148, ../sass/partials/_chat.scss */
 .sz {
   width: 20%;
   display: block;
@@ -887,13 +893,13 @@ ul li {
   overflow: hidden;
 }
 
-/* line 150, ../sass/partials/_chat.scss */
+/* line 155, ../sass/partials/_chat.scss */
 .dt {
   width: 20%;
   margin-top: -6px;
 }
 
-/* line 158, ../sass/partials/_chat.scss */
+/* line 163, ../sass/partials/_chat.scss */
 textarea {
   -moz-box-shadow: 1px 1px 0 #E7E7E7;
   -moz-box-sizing: border-box;
