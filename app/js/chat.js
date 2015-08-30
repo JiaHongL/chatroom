@@ -8,7 +8,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
       $scope.mes='';
 			var results = res.data;
 			for(var i in results) {
-			   inmessage = results[i].name + " : " + results[i].content;
+			   // inmessage = results[i].name + " : " + results[i].content;
                if (i==0){
                     // $("#message").text(inmessage);
                     $scope.mes = results[i].name + " : " + results[i].content +'\n';
