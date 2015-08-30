@@ -77,7 +77,6 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
         Parse.User.logOut();
         socket.emit('disconnect_check');
         location.replace("#/login");
-        // window.location.reload();
         $scope.$apply();
     }
     
@@ -127,7 +126,7 @@ myApp.controller('onebyoneCtrl', ['$scope','musicapi', function ($scope,musicapi
             "hideMethod": "fadeOut"
           }
           toastr.options.preventDuplicates = true;
-          toastr.success(name + " has a new message for you");
+          toastr.info(name + " has a new message for you");
         } 
     });
 

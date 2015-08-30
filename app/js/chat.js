@@ -128,7 +128,7 @@ myApp.controller('chatCtrl', ['$scope','musicapi', function ($scope,musicapi) {
             "hideMethod": "fadeOut"
           }
           toastr.options.preventDuplicates = true;
-          toastr.success(name + " has a new message for you");
+          toastr.info(name + " has a new message for you");
         } 
     });
 
